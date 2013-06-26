@@ -20,4 +20,5 @@ tinix is a tiny ajax library written as a node module. You can `require` it into
     $.cookies.getItem(name)
     $.cookies.removeItem(name[, path])
     $.cookies.hasItem(name)
-    $.cookies.keys()    
+    $.cookies.keys() 
+    <Element>.on                            // same as <Element>.addEventListener 

@@ -4,59 +4,58 @@
 //
 
 
-Element.prototype.on = Element.prototype.addEventListener ||
-                        Element.prototype.attachEvent;
+Element.prototype.on = Element.prototype.addEventListener || Element.prototype.attachEvent
 
 var tinix = function(id) {
-    return document.querySelector(id);
+    return document.querySelector(id)
 }
 
 tinix.version = "0.0.1"
 
 tinix.all = function(id) {
-    return document.querySelectorAll(id);
+    return document.querySelectorAll(id)
 }
 
 tinix.ready = function(f) {
     if (document.readyState != "loading") {
         document.onreadystatechange = function() {
-            if (document.readyState == "interactive") f();
+            if (document.readyState == "interactive") f()
         }
     } else {
-        f();
+        f()
     }
-};
+}
 
 tinix.getR = function(s, f) {
-    var r = new XMLHttpRequest();
+    var r = new XMLHttpRequest()
     r.onload = function() {
         if (r.status == 200) {
             if (r.getResponseHeader("Content-Type") == "application/json") {
-                s(JSON.parse(r.responseText));
+                s(JSON.parse(r.responseText))
             } else {
-                s(r.responseText);
+                s(r.responseText)
             }
         } else {
-            f(r);
+            f(r)
         }
-    };
-    return r;
-};
+    }
+    return r
+}
 
 // get(url, success, failure)
 tinix.get = function(u, s, f) {
-    var r = this.getR(s, f);
-    r.open("GET", u, true);
-    r.send();
-};
+    var r = this.getR(s, f)
+    r.open("GET", u, true)
+    r.send()
+}
 
 // postJSON(url, body, success, failure)
 tinix.postJSON = function(u, b, s, f) {
-    var r = this.getR(s, f);
-    r.open("POST", u, true);
-    r.setRequestHeader("Content-type", "application/json");
-    r.send(JSON.stringify(b));
-};
+    var r = this.getR(s, f)
+    r.open("POST", u, true)
+    r.setRequestHeader("Content-type", "application/json")
+    r.send(JSON.stringify(b))
+}
 
 /*\
 |*|
