@@ -1,0 +1,10 @@
+{
+  "name"          : "tinix",
+  "description"   : "Tiny JavaScript ajax library.",
+  "keywords"      : ["ajax", "functional", "javascript", "library", "client", "browser"],
+  "author"        : "Santosh Rajan <santrajan@gmail.com>",
+  "repository"    : {"type": "git", "url": "git://github.com/santoshrajan/tinix.git"},
+  "main"          : "tinix.js",
+  "version"       : "0.0.1",
+  "license"       : "MIT"
+}
