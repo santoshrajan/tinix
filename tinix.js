@@ -17,7 +17,7 @@ tinix.all = function(id) {
 }
 
 tinix.ready = function(f) {
-    if (document.readyState != "loading") {
+    if (document.readyState == "loading") {
         document.onreadystatechange = function() {
             if (document.readyState == "interactive") f()
         }
