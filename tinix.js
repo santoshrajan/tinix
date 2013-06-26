@@ -4,7 +4,7 @@
 //
 
 
-Element.prototype.on = Element.prototype.addEventListener || Element.prototype.attachEvent
+Element.prototype.on = Element.prototype.addEventListener
 
 var tinix = function(id) {
     return document.querySelector(id)
