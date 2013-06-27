@@ -17,11 +17,16 @@ tinix is a tiny ajax library written as a node module. You can `require` it into
     $.ready(callback)
     
     $.get(url, success, failure)            // success is called with responseText or
-                                            // JSON object if JSON response for all types of request
+                                            // JSON object if JSON response, for all types of request
+                                            // inclusing the ones below
     
     $.post(url, body, contenttype, success, failure)
     
     $.postJSON(url, body, success, failure) // body is json object
+    
+    $.getR(success, failure)                // returns the request object with onload set. Set request
+                                            // parameters and call `request.send`. Use if the request
+                                            // types provided above are not enough.
     
     // cookie functions
     $.cookies.setItem(name, value[, end[, path[, domain[, secure]]]])
