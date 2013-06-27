@@ -9,16 +9,25 @@ tinix is a tiny ajax library written as a node module. You can `require` it into
 
 ### Usage
     var $ = require("tinix")
-    
+        
     $(selector)                             // same as document.querySelector
+    
     $.all(selector)                         // same as document.querySelectorAll
+    
     $.ready(callback)
+    
     $.get(url, success, failure)            // success is called with responseText or
-                                            // JSON object if JSON response
-    $.postJSON(url, body, success, failure)
+                                            // JSON object if JSON response for all types pf request
+    
+    $.post(url, body, contenttype, success, failure)
+    
+    $.postJSON(url, body, success, failure) // body is json object
+    
+    // cookie functions
     $.cookies.setItem(name, value[, end[, path[, domain[, secure]]]])
     $.cookies.getItem(name)
     $.cookies.removeItem(name[, path])
     $.cookies.hasItem(name)
     $.cookies.keys() 
+    
     <Element>.on                            // same as <Element>.addEventListener 

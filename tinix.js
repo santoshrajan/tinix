@@ -49,12 +49,17 @@ tinix.get = function(u, s, f) {
     r.send()
 }
 
-// postJSON(url, body, success, failure)
-tinix.postJSON = function(u, b, s, f) {
+// post(url, body, contenttype, success, failure)
+tinix.post = function(u, b, c, s, f) {
     var r = this.getR(s, f)
     r.open("POST", u, true)
-    r.setRequestHeader("Content-type", "application/json")
-    r.send(JSON.stringify(b))
+    r.setRequestHeader("Content-Type", c)
+    r.send(b)
+}
+
+// postJSON(url, body, success, failure)
+tinix.postJSON = function(u, b, s, f) {
+    this.post(u, JSON.stringify(b), "application/json", s, f)
 }
 
 /*\
