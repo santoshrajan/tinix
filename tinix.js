@@ -10,7 +10,7 @@ var tinix = function(id) {
     return document.querySelector(id)
 }
 
-tinix.version = "0.0.2"
+tinix.version = "0.0.3"
 
 tinix.all = function(id) {
     return document.querySelectorAll(id)
@@ -42,17 +42,20 @@ tinix.getR = function(s, f) {
     return r
 }
 
-// get(url, success, failure)
-tinix.get = function(u, s, f) {
+// get(url, success, failure [,overrideMimeType])
+tinix.get = function(u, s, f, o) {
     var r = this.getR(s, f)
-    r.open("GET", u, true)
+    r.open("GET", u)
+    if (o) {
+      r.overrideMimeType(o)
+    }
     r.send()
 }
 
 // post(url, body, contenttype, success, failure)
 tinix.post = function(u, b, c, s, f) {
     var r = this.getR(s, f)
-    r.open("POST", u, true)
+    r.open("POST", u)
     r.setRequestHeader("Content-Type", c)
     r.send(b)
 }

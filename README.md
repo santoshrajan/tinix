@@ -16,9 +16,9 @@ tinix is a tiny ajax library written as a node module. You can `require` it into
     
     $.ready(callback)
     
-    $.get(url, success, failure)            // success is called with responseText or
-                                            // JSON object if JSON response, for all types of request
-                                            // inclusing the ones below
+    $.get(url, success, failure [,overrideMimeType])  // success is called with responseText or JSON object
+                                            // if JSON response. Failure is called with the request object.
+                                            // This is applicable to post requests also. 
     
     $.post(url, body, contenttype, success, failure)
     
