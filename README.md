@@ -2,7 +2,7 @@
 
 ## A Tiny Ajax Library for JavaScript
 
-tinix is a tiny ajax library written as a node module. You can `require` it into your code using `browserify`. Works in all modern browser (>= IE9).
+tinix is a tiny ajax library written as a node module. You can `require` it into your code using `browserify`. Works in all modern browser (>= IE9). If all your app needs is a lightweight ajax library the tinix is for you.
 
 ### Install
     $ npm install tinix
@@ -13,6 +13,8 @@ tinix is a tiny ajax library written as a node module. You can `require` it into
     $(selector)                             // same as document.querySelector
     
     $.all(selector)                         // same as document.querySelectorAll
+
+    $.display(selector, <display property>) // changes the selectors style.display to <display property>
     
     $.ready(callback)
     

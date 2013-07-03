@@ -10,11 +10,18 @@ var tinix = function(id) {
     return document.querySelector(id)
 }
 
-tinix.version = "0.0.3"
+tinix.version = "0.0.4"
 
 tinix.all = function(id) {
     return document.querySelectorAll(id)
 }
+
+tinix.display = function(s, d) {
+    Array.prototype.forEach.call(this.all(s), function(elem) {
+       elem.style.display = d
+    })
+}
+
 
 tinix.ready = function(f) {
     if (document.readyState == "loading") {
