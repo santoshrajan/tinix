@@ -25,8 +25,8 @@ Success is called with responseText, or JSON object if JSON response. Failure is
 `body` is json object
 #### $.getR(success, failure)
 Returns the request object with onload set. Set request parameters and call `request.send`. Use if the request types provided above are not enough.
-#### <Element>.on
-Same as <Element>.addEventListener 
+#### &lt;Element&gt;.on
+Same as &lt;Element&gt;.addEventListener 
 #### Cookie functions
     $.cookies.setItem(name, value[, end[, path[, domain[, secure]]]])
     $.cookies.getItem(name)
