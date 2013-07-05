@@ -4,20 +4,28 @@
 //
 
 
-Element.prototype.on = Element.prototype.addEventListener
+if (!Element.prototype.on) Element.prototype.on = Element.prototype.addEventListener
 
 var tinix = function(id) {
     return document.querySelector(id)
 }
 
-tinix.version = "0.0.4"
+tinix.version = "0.0.5"
 
 tinix.all = function(id) {
     return document.querySelectorAll(id)
 }
 
+tinix.forEach = function(s, f) {
+    Array.prototype.forEach.call(this.all(s), f)
+}
+
+tinix.map = function(s, f) {
+    return Array.prototype.map.call(this.all(s), f)
+}
+
 tinix.display = function(s, d) {
-    Array.prototype.forEach.call(this.all(s), function(elem) {
+    this.forEach(s, function(elem) {
        elem.style.display = d
     })
 }
