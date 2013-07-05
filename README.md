@@ -1,6 +1,6 @@
 # tinix
 
-## Shortcuts for Vanilla JavaScript
+## Shortcuts for Vanilla JavaScript DOM
 
 tinix is a tiny ajax library written as shortscuts for vanilla JavaScript. It is a node module you can `require` it into your code using `browserify`. Works in all modern browser (>= IE9). If all your app needs is a lightweight ajax library then tinix is for you.
 
@@ -14,8 +14,8 @@ Same as document.querySelectorAll
 `callback` is called with each `Element` of the `NodeList` returned by `querySelectorAll(selector)`.
 #### $.map(selector, callback)
 `callback` is called with each `Element` of the `NodeList` returned by `querySelectorAll(selector)`. Returns `Array`.  
-#### $.display(selector, <display property>)
-Changes the selector(s) style.display to <display property>
+#### $.display(selector, displayValue)
+Changes the selector(s) style.display to displayValue. eg. "none", "block" etc
 #### $.ready(callback)
 #### XHR functions
 Success is called with responseText, or JSON object if JSON response. Failure is called with the request object.
