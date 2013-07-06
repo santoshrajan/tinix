@@ -14,6 +14,8 @@ Same as document.querySelectorAll
 `callback` is called with each `Element` of the `NodeList` returned by `querySelectorAll(selector)`.
 #### $.map(selector, callback)
 `callback` is called with each `Element` of the `NodeList` returned by `querySelectorAll(selector)`. Returns `Array`.  
+#### $.style(selector, stylename, stylevalue)
+Changes the selector(s) style.stylename to stylevalue.
 #### $.display(selector, displayValue)
 Changes the selector(s) style.display to displayValue. eg. "none", "block" etc
 #### $.ready(callback)

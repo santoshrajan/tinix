@@ -24,12 +24,15 @@ tinix.map = function(s, f) {
     return Array.prototype.map.call(this.all(s), f)
 }
 
-tinix.display = function(s, d) {
+tinix.style = function(s, n, v) {
     this.forEach(s, function(elem) {
-       elem.style.display = d
+       elem.style[n] = v
     })
 }
 
+tinix.display = function(s, v) {
+    this.style(s, "display", v)
+}
 
 tinix.ready = function(f) {
     if (document.readyState == "loading") {
