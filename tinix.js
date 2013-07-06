@@ -10,7 +10,7 @@ var tinix = function(id) {
     return document.querySelector(id)
 }
 
-tinix.version = "0.0.5"
+tinix.version = "0.0.6"
 
 tinix.all = function(id) {
     return document.querySelectorAll(id)
@@ -41,25 +41,25 @@ tinix.ready = function(f) {
     }
 }
 
-tinix.getR = function(s, f) {
+tinix.getR = function(c) {
     var r = new XMLHttpRequest()
     r.onload = function() {
         if (r.status == 200) {
             if (r.getResponseHeader("Content-Type") == "application/json") {
-                s(JSON.parse(r.responseText))
+                c(null, JSON.parse(r.responseText))
             } else {
-                s(r.responseText)
+                c(null, r.responseText)
             }
         } else {
-            f(r)
+            c(r)
         }
     }
     return r
 }
 
-// get(url, success, failure [,overrideMimeType])
-tinix.get = function(u, s, f, o) {
-    var r = this.getR(s, f)
+// get(url, callback [,overrideMimeType])
+tinix.get = function(u, c, o) {
+    var r = this.getR(c)
     r.open("GET", u)
     if (o) {
       r.overrideMimeType(o)
@@ -67,17 +67,17 @@ tinix.get = function(u, s, f, o) {
     r.send()
 }
 
-// post(url, body, contenttype, success, failure)
-tinix.post = function(u, b, c, s, f) {
-    var r = this.getR(s, f)
+// post(url, body, contenttype, callback)
+tinix.post = function(u, b, t, c) {
+    var r = this.getR(c)
     r.open("POST", u)
-    r.setRequestHeader("Content-Type", c)
+    r.setRequestHeader("Content-Type", t)
     r.send(b)
 }
 
-// postJSON(url, body, success, failure)
-tinix.postJSON = function(u, b, s, f) {
-    this.post(u, JSON.stringify(b), "application/json", s, f)
+// postJSON(url, body, callback)
+tinix.postJSON = function(u, b, c) {
+    this.post(u, JSON.stringify(b), "application/json", c)
 }
 
 /*\

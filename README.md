@@ -18,12 +18,12 @@ Same as document.querySelectorAll
 Changes the selector(s) style.display to displayValue. eg. "none", "block" etc
 #### $.ready(callback)
 #### XHR functions
-Success is called with responseText, or JSON object if JSON response. Failure is called with the request object.
-#### $.get(url, success, failure [,overrideMimeType])  
-#### $.post(url, body, contenttype, success, failure)
-#### $.postJSON(url, body, success, failure)
+Callback is called with `error` as first argument. Second argument is responseText, or JSON object if JSON response. `error` will be `null` for success, or the `XMLHttpRequest` object for failure.
+#### $.get(url, callback [,overrideMimeType])  
+#### $.post(url, body, contenttype, callback)
+#### $.postJSON(url, body, callback)
 `body` is json object
-#### $.getR(success, failure)
+#### $.getR(callback)
 Returns the request object with onload set. Set request parameters and call `request.send`. Use if the request types provided above are not enough.
 #### &lt;Element&gt;.on
 Same as &lt;Element&gt;.addEventListener 
