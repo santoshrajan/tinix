@@ -7,18 +7,19 @@ tinix is a tiny library of shortcuts for vanilla JavaScript DOM. It is a node mo
 ### Install
     $ npm install tinix        
 #### $(selector)
-Same as document.querySelector
+Same as `document.querySelector`
 #### $.all(selector)
-Same as document.querySelectorAll
+Same as `document.querySelectorAll`
 #### $.forEach(selector, callback)
-`callback` is called with each `Element` of the `NodeList` returned by `querySelectorAll(selector)`.
+`callback` is called with each `Element` of the `NodeList` matching `selector`.
 #### $.map(selector, callback)
-`callback` is called with each `Element` of the `NodeList` returned by `querySelectorAll(selector)`. Returns `Array`.  
-#### $.style(selector, stylename, stylevalue)
-Changes the selector(s) style.stylename to stylevalue.
-#### $.display(selector, displayValue)
-Changes the selector(s) style.display to displayValue. eg. "none", "block" etc
+`callback` is called with each `Element` of the `NodeList` matching `selector`. Returns `Array`.  
+#### $.style(selector, property, value)
+Changes the selector(s) style.property to value.
+#### $.display(selector, value)
+Changes the selector(s) style.display to value. eg. "none", "block" etc
 #### $.ready(callback)
+Callback is called when `document.readyState` is `complete` or `interactive`, depending on the browser and how your scripts are loaded.
 #### XHR functions
 Callback is called with `error` as first argument. Second argument is responseText, or JSON object if JSON response. `error` will be `null` for success, or the `XMLHttpRequest` object for failure.
 #### $.get(url, callback [,overrideMimeType])  
