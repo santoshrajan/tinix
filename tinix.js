@@ -10,7 +10,7 @@ var tinix = function(id) {
     return document.querySelector(id)
 }
 
-tinix.version = "0.0.8"
+tinix.version = "0.0.9"
 
 tinix.all = function(id) {
     return document.querySelectorAll(id)
