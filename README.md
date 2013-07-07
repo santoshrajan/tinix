@@ -7,18 +7,12 @@ tinix is a tiny library of shortcuts for vanilla JavaScript DOM. It is a node mo
 ### Install
     $ npm install tinix
     $ browserify -r tinix -o tinix.js
-    
     // And include tinix.js
     <script type="text/javascript" src="tinix.js"></script>
-    
-    // Or skip the above steps and
-    // use directly in browser from browserify-cdn
+### Or use directly in browser from browserify-cdn
     <script type="text/javascript" src="http://wzrd.in.nyud.net/bundle/tinix"></script>
-    
-    // And your javascript
-    <script type="text/javascript">
+#### And in your javascript
     var $ = require("tinix")
-    </script>
 
 #### $(selector)
 Same as `document.querySelector`
