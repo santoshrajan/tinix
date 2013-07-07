@@ -2,7 +2,9 @@
 
 ## Shortcuts for Vanilla JavaScript DOM
 
-tinix is a tiny library of shortcuts for vanilla JavaScript DOM. It is a node module you can `require` it into your code using `browserify`. Works in all modern browser (>= IE9). If all your app needs is a lightweight ajax library then tinix is for you. Only 2k minified.
+tinix is a tiny library of shortcuts for vanilla JavaScript DOM. If all your app needs is a lightweight ajax library then tinix is for you. Only 2k minified.
+
+[![browser support](https://ci.testling.com/santoshrajan/tinix.png)](https://ci.testling.com/santoshrajan/tinix)
 
 ### Install
     $ npm install tinix
