@@ -5,6 +5,6 @@
   "author"        : "Santosh Rajan <santrajan@gmail.com>",
   "repository"    : {"type": "git", "url": "git://github.com/santoshrajan/tinix.git"},
   "main"          : "tinix.js",
-  "version"       : "0.0.6",
+  "version"       : "0.0.7",
   "license"       : "MIT"
 }

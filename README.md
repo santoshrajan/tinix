@@ -5,7 +5,14 @@
 tinix is a tiny library of shortcuts for vanilla JavaScript DOM. It is a node module you can `require` it into your code using `browserify`. Works in all modern browser (>= IE9). If all your app needs is a lightweight ajax library then tinix is for you. Only 2k minified.
 
 ### Install
-    $ npm install tinix        
+    $ npm install tinix
+    $ browserify -r tinix -o tinix.js
+    // Or use directly in browser from browserify-cdn
+    &lt;script&gt; type="text/javascript" src="http://wzrd.in.nyud.net/bundle/tinix"&gt;&lt;/script&gt; 
+    &lt;script&gt; type="text/javascript"&gt;
+    var $ = require("tinix")
+    &lt;/script&gt; 
+
 #### $(selector)
 Same as `document.querySelector`
 #### $.all(selector)
