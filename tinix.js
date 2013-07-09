@@ -10,12 +10,7 @@ var tinix = function(id) {
     return document.querySelector(id)
 }
 
-tinix.version = "0.0.10"
-
-tinix.isSupported = !!(XMLHttpRequest && JSON && document.addEventListener &&
-                  document.querySelector && document.querySelectorAll &&
-                  Array.prototype.forEach && Array.prototype.map && 
-                  document.readyState)
+tinix.version = "0.0.11"
 
 tinix.all = function(id) {
     return document.querySelectorAll(id)
