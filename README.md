@@ -14,6 +14,8 @@ tinix is a tiny library of shortcuts for vanilla JavaScript DOM. If all your app
 #### And in your javascript
     var $ = require("tinix")
 
+#### $.isSupported
+This property is `true` if the browser is supported.
 #### $(selector)
 Same as `document.querySelector`
 #### $.all(selector)
