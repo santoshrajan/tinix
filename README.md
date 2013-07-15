@@ -43,6 +43,10 @@ Same as &lt;Element&gt;.addEventListener
     $.cookies.getItem(name)
     $.cookies.removeItem(name[, path])
     $.cookies.hasItem(name)
-    $.cookies.keys() 
+    $.cookies.keys()
+#### $.curry(fn [, numArgs])
+Will curry a given function. The curried function can be called with less arguments than `fn`. `fn` is called after all its arguments are in, from calls to the curried function. If `fn` expects an arbitrary no of arguments, then you can call curry with an optional `numArgs`.
+#### $.compose(fnn, ... , fn2, fn1, fn0)
+Compose the given functions. The composed function evaluates the given function from right to left. The value returned is the return value of `fnn`.
     
     

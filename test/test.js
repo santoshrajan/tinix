@@ -3,7 +3,7 @@ var test = require("tape")
 
 test("Compatibility Test", function(t) {
     t.plan(8)
-    t.ok(typeof XMLHttpRequest, 'function')
+    t.notEqual(typeof XMLHttpRequest, 'undefined')
     t.equal(typeof JSON, 'object')
     t.equal(typeof document.readyState, 'string')
     t.equal(typeof document.addEventListener, 'function')
