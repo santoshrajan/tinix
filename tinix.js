@@ -10,7 +10,7 @@ var tinix = function(id) {
     return document.querySelector(id)
 }
 
-tinix.version = "0.0.12"
+tinix.version = "0.0.13"
 
 tinix.all = function(id) {
     return document.querySelectorAll(id)
@@ -86,12 +86,13 @@ tinix.postJSON = function(u, b, c) {
 // Functional Stuff
 
 tinix.curry = function(fn, numArgs) {
-  numArgs = numArgs || fn.length
-  var args = []
-  return function curried() {
-    args.push.apply(args, arguments)
-    return args.length === numArgs ? fn.apply(this, args) : curried
-  }
+    numArgs = numArgs || fn.length
+    return function f(largs) {
+        return function() {
+            var args = Array.prototype.concat.apply(largs, arguments)
+            return args.length === numArgs ? fn.apply(null, args) : f(args)
+        }
+    }([])
 }
 
 tinix.compose = function() {
