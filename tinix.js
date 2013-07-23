@@ -10,7 +10,7 @@ var tinix = function(id) {
     return document.querySelector(id)
 }
 
-tinix.version = "0.0.14"
+tinix.version = "0.0.15"
 
 tinix.all = function(id) {
     return document.querySelectorAll(id)
@@ -96,18 +96,14 @@ tinix.curry = function(fn, numArgs) {
 }
 
 tinix.compose = function() {
-  var args = Array.prototype.slice.call(arguments)
-  return function() {
-    var funcs = [].concat(args)
-    return function f() {
-        if (funcs.length === 0) {
-          return arguments[0]
-        } else {
-          return f(funcs.pop().apply(null, arguments))
-        }
-    }.apply(null, arguments)
-  }
+    var funcs = Array.prototype.slice.call(arguments)
+    return function(x) {
+        return funcs.reduceRight(function(prev_val, next) {
+            return next(prev_val)
+        }, x)
+    }
 }
+
 
 /*\
 |*|
