@@ -37,16 +37,4 @@ Callback is called with `error` as first argument. Second argument is responseTe
 #### $.getR(callback)
 Returns the request object with onload set. Set request parameters and call `request.send`. Use if the request types provided above are not enough.
 #### &lt;Element&gt;.on
-Same as &lt;Element&gt;.addEventListener 
-#### Cookie functions
-    $.cookies.setItem(name, value[, end[, path[, domain[, secure]]]])
-    $.cookies.getItem(name)
-    $.cookies.removeItem(name[, path])
-    $.cookies.hasItem(name)
-    $.cookies.keys()
-#### $.curry(fn [, numArgs])
-Will curry a given function. The curried function can be called with less arguments than `fn`. `fn` is called after all its arguments are in, from calls to the curried function. If `fn` expects an arbitrary no of arguments, then you can call curry with an optional `numArgs`.
-#### $.compose(fnn, ... , fn2, fn1, fn0)
-Compose the given functions. The composed function evaluates the given function from right to left. The value returned is the return value of `fnn`.
-    
-    
+Same as &lt;Element&gt;.addEventListener
