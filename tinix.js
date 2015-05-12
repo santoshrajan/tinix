@@ -40,13 +40,7 @@ tinix.display = function(selector, val) {
 }
 
 tinix.ready = function(func) {
-    if (document.readyState == "loading") {
-        document.onreadystatechange = function() {
-            if (document.readyState == "interactive") func()
-        }
-    } else {
-        func()
-    }
+  document.addEventListener('DOMContentLoaded', function() {func()})
 }
 
 tinix.getR = function(callback) {
