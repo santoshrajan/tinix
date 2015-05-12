@@ -1,7 +1,6 @@
 // tinix.js
 //
 // Copyright 2013 - Santosh Rajan - santoshrajan.com
-//
 
 function tinix(selector, elem) {
     elem = elem || document
@@ -41,6 +40,16 @@ tinix.display = function(selector, val) {
 
 tinix.ready = function(func) {
   document.addEventListener('DOMContentLoaded', function() {func()})
+}
+
+tinix.isString = function(str) {
+  return typeof(str) === 'string'
+}
+
+tinix.isArray = Array.isArray
+
+tinix.isObject = function(str) {
+  return Object.prototype.toString.call(str) === '[object Object]'
 }
 
 tinix.getR = function(callback) {
