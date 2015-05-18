@@ -20,8 +20,8 @@ tinix.all = function(selector, elem) {
     return elem.querySelectorAll(selector)
 }
 
-tinix.forEach = function(selector, func) {
-    Array.prototype.forEach.call(this.all(selector), func)
+tinix.forEach = function(selector, elem, func) {
+    Array.prototype.forEach.call(this.all(selector, elem), func)
 }
 
 tinix.map = function(selector, func) {
@@ -67,6 +67,7 @@ tinix.getR = function(callback) {
     }
     return request
 }
+
 
 // get(url, callback [,overrideMimeType])
 tinix.get = function(url, callback, overrideMimeType) {
