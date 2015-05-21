@@ -18,10 +18,6 @@ tinix is a tiny library of shortcuts for vanilla JavaScript DOM. If all your app
 Same as `document.querySelector`
 #### $.all(selector)
 Same as `document.querySelectorAll`
-#### $.forEach(selector, callback)
-`callback` is called with each `Element` of the `NodeList` matching `selector`.
-#### $.map(selector, callback)
-`callback` is called with each `Element` of the `NodeList` matching `selector`. Returns `Array`.  
 #### $.style(selector, property, value)
 Changes the selector(s) style.property to value.
 #### $.display(selector, value)
