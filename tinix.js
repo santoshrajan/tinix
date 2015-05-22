@@ -15,27 +15,24 @@ if (tinix.supported && !Element.prototype.on) {
   Element.prototype.on = Element.prototype.addEventListener
 }
 
+if (tinix.supported && !NodeList.prototype.forEach) {
+  NodeList.prototype.forEach = Array.prototype.forEach
+}
+
 tinix.all = function(selector, elem) {
     elem = elem || document
     return elem.querySelectorAll(selector)
 }
 
-tinix.forEach = function(selector, func) {
-    Array.prototype.forEach.call(this.all(selector), func)
+
+tinix.style = function(selector, rootElem, key, val) {
+  this.all(selector, rootElem).forEach(function(el){
+    el.style[key] = val;
+  })
 }
 
-tinix.map = function(selector, func) {
-    return Array.prototype.map.call(this.all(selector), func)
-}
-
-tinix.style = function(selector, iteratee, val) {
-    this.forEach(s, function(elem) {
-       elem.style[iteratee] = val
-    })
-}
-
-tinix.display = function(selector, val) {
-    this.style(selector, "display", val)
+tinix.display = function(selector, rootElem, val) {
+    this.style(selector, rootElem, "display", val)
 }
 
 tinix.ready = function(func) {
@@ -67,6 +64,7 @@ tinix.getR = function(callback) {
     }
     return request
 }
+
 
 // get(url, callback [,overrideMimeType])
 tinix.get = function(url, callback, overrideMimeType) {
