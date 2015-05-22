@@ -7,7 +7,7 @@ function tinix(selector, elem) {
     return elem.querySelector(selector)
 }
 
-tinix.version = "0.2.0"
+tinix.version = "0.2.1"
 
 tinix.supported = !!document.addEventListener
 
@@ -27,7 +27,7 @@ tinix.all = function(selector, elem) {
 
 tinix.style = function(selector, rootElem, key, val) {
   this.all(selector, rootElem).forEach(function(el){
-    el.style[key] = val;
+    el.style[key] = val
   })
 }
 
