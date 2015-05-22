@@ -18,9 +18,9 @@ tinix is a tiny library of shortcuts for vanilla JavaScript DOM. If all your app
 Same as `document.querySelector`
 #### $.all(selector)
 Same as `document.querySelectorAll`
-#### $.style(selector, property, value)
+#### $.style(selector,rootElem or null, property, value)
 Changes the selector(s) style.property to value.
-#### $.display(selector, value)
+#### $.display(selector, rootElem or null, value)
 Changes the selector(s) style.display to value. eg. "none", "block" etc
 #### $.ready(callback)
 Callback is called when `document.readyState` is `complete` or `interactive`, depending on the browser and how your scripts are loaded.
@@ -34,3 +34,5 @@ Callback is called with `error` as first argument. Second argument is responseTe
 Returns the request object with onload set. Set request parameters and call `request.send`. Use if the request types provided above are not enough.
 #### &lt;Element&gt;.on
 Same as &lt;Element&gt;.addEventListener
+#### NodeList.forEach
+Iterates over a NodeList, callback is called with every element of the NodeList. 
