@@ -5,22 +5,6 @@
   "author"        : "Santosh Rajan <santrajan@gmail.com>",
   "repository"    : {"type": "git", "url": "git://github.com/santoshrajan/tinix.git"},
   "main"          : "tinix.js",
-  "version"       : "0.2.1",
+  "version"       : "0.2.2",
   "license"       : "MIT",
-  "devDependencies": {
-    "tape": "~0.3.2"
-  },
-  "testling": {
-    "files": "test/*.js",
-    "browsers": {
-        "ie" : [ 9, 10 ],
-        "ff" : [ 12, 19.0 ],
-        "chrome" : [ 10, 25 ],
-        "safari" : [ 5.1, 6.0 ],
-        "opera" : [11, 12 ],
-        "iphone" : [6.0],
-        "ipad" : [6.0],
-        "android-browser": [4.2]
-    }
-  }
 }

@@ -7,7 +7,7 @@ function tinix(selector, elem) {
     return elem.querySelector(selector)
 }
 
-tinix.version = "0.2.1"
+tinix.version = "0.2.2"
 
 tinix.supported = !!document.addEventListener
 
@@ -78,7 +78,7 @@ tinix.get = function(url, callback, overrideMimeType) {
 
 // post(url, body, contenttype, callback)
 tinix.post = function(url, body, contenttype, callback) {
-    var request = this.getR(contenttype)
+    var request = this.getR(callback)
     request.open("POST", url)
     request.setRequestHeader("Content-Type", contenttype)
     request.send(body)
